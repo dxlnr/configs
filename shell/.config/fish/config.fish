@@ -1,6 +1,11 @@
 abbr -a g 'cd Documents/Github'
 abbr -a ga 'git add --all'
 
+if status is-interactive
+and not set -q TMUX
+    exec tmux
+end
+
 
 function fish_greeting
 	echo
