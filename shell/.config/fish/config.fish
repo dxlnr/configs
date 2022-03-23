@@ -1,11 +1,15 @@
-abbr -a g 'cd Documents/Github'
+abbr -a g 'cd ~/Documents/Github'
 abbr -a ga 'git add --all'
+abbr -a m 'cd ~/Documents/Modalic/code'
+
+set PATH /var/lib/snapd/snap/bin $PATH
+set  PATH /home/daniel/anaconda3/bin $PATH
+set XDG_DATA_DIRS /var/lib/snapd/desktop/:$XDG_DATA_DIRS
 
 if status is-interactive
 and not set -q TMUX
     exec tmux
 end
-
 
 function fish_greeting
 	echo
@@ -51,3 +55,11 @@ function fish_greeting
 		)
 	echo
 end
+
+# eval %(conda_exe)s "shell.fish" "hook" $argv | source
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/daniel/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
