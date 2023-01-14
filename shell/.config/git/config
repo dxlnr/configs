@@ -1,0 +1,6 @@
+[user]
+	name = Daniel Illner
+	email = daniel.illner@outlook.de
+
+[init]
+	defaultBranch = main
