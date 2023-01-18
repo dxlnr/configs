@@ -21,7 +21,7 @@
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  #TERM: Alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -31,15 +31,15 @@ window:
   # fall back to the window manager's recommended size.
   dimensions:
     columns: 160
-    lines: 48
+    lines: 42
 
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
   position:
-    x: 200
-    y: 200
+    x: 250
+    y: 250
 
   # Window padding (changes require restart)
   #
@@ -67,7 +67,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  #opacity: 1.0
+  opacity: 0.85
 
   # Startup Mode (changes require restart)
   #
@@ -156,7 +156,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -182,11 +182,11 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
+  primary:
+    background: '#000000'
+    foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
     #
@@ -273,26 +273,26 @@ font:
   #  background: CellForeground
 
   # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
+  normal:
+    black:   '0x181818'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xd8d8d8'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
+  bright:
+    black:   '0x585858'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xf8f8f8'
 
   # Dim colors
   #
@@ -811,9 +811,9 @@ key_bindings:
 
   # (Windows, Linux, and BSD only)
   #- { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste            }
-  - { key: V,              mods: Control,        action: Paste            }
+  - { key: V,              mods: Control|Shift,                   action: Paste            }
   #- { key: C,              mods: Control|Shift,                   action: Copy             }
-  - { key: C,              mods: Control,                   action: Copy             }
+  - { key: C,              mods: Control|Shift,                   action: Copy             }
   #- { key: F,              mods: Control|Shift, mode: ~Search,    action: SearchForward    }
   #- { key: B,              mods: Control|Shift, mode: ~Search,    action: SearchBackward   }
   #- { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection   }
