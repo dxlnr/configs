@@ -1,6 +1,5 @@
 Software Tools:
-	- Tilling Window Manager: Xmonad
-	- Terminal GUI: Alacritty
+	- Terminal Emulator: Alacritty
 	- Shell: fish + tmux
 	- Editor: Neovim (+ VsCode)
 	- exa (modern replacement for ls.)
@@ -9,4 +8,3 @@ Stuff I want to use
 	- Tilling Window Manager: Xmonad
 	- Polybar
 	- fzf (fuzzy finder)
-
