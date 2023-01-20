@@ -3,7 +3,19 @@
 # Terminate already running bar instances
 killall -q polybar
 
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+# wait until the processes have been shut down
+while pgrep -x polybar >/dev/null; do sleep 1; done
 
-exec polybar --reload main
+# launch polybar
+if [ "$(hostname)" = "pcgish" ]
+then
+  polybar desktop &
+else
+  if ! pgrep -x "nm-applet" >/dev/null
+  then
+    nm-applet &
+  fi
+  polybar laptop &
+fi
+
+echo "Bars launched..."
