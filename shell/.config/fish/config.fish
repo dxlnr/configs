@@ -1,7 +1,6 @@
 abbr -a n nvim
-abbr -a g 'cd ~/Documents/Github'
+abbr -a g 'cd ~/code/github'
 abbr -a ga 'git add --all'
-abbr -a m 'cd ~/Documents/Modalic/code'
 
 if status is-interactive
 and not set -q TMUX
