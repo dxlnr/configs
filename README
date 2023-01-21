@@ -10,7 +10,7 @@ Stuff I want to use
 	- Xsession
 
 Neovim Plugins (with Packer as Plugin Manager):
-    - telescope (fuzzy finder)
-    - harpoon
-    - treesitter
-    - vim-fugitive
+	- telescope (fuzzy finder)
+	- harpoon
+	- treesitter
+	- vim-fugitive
