@@ -1,11 +1,11 @@
-local lsp = require("lsp-zero")
+local lsp = require('lsp-zero')
 
-lsp.preset("recommended")
+lsp.preset('recommended')
 
 lsp.ensure_installed({
 	'sumneko_lua',
 	'rust_analyzer',
-	'lsp-pyright',
+	'pyright',
 })
 
 local cmp = require('cmp')
@@ -23,4 +23,11 @@ lsp.set_preferences({
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings
+})
+
+
+lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true,
 })

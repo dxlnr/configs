@@ -1,6 +1,7 @@
 abbr -a n nvim
 abbr -a g 'cd ~/code/github'
 abbr -a ga 'git add --all'
+abbr -a m 'cd ~/code/modalic/code'
 
 if status is-interactive
 and not set -q TMUX
@@ -67,9 +68,10 @@ function fish_greeting
 	echo
 end
 
-# >>> conda initialize >>>
+# Permanent Path Config
 eval /home/daniel/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
+set PATH $HOME/.cargo/bin $PATH
+set PATH $HOME/.nvm/versions/node/v19.4.0/bin $PATH
 
 # RISCV Toolchain
 set RISCV /opt/riscv $RISCV

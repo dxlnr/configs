@@ -8,4 +8,9 @@ Stuff I want to use
 	- Tilling Window Manager: Xmonad
 	- Polybar
 	- Xsession
-	- fzf (fuzzy finder vim plug)
+
+Neovim Plugins (with Packer as Plugin Manager):
+    - telescope (fuzzy finder)
+    - harpoon
+    - treesitter
+    - vim-fugitive
