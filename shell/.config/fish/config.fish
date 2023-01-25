@@ -12,6 +12,9 @@ if test -f /usr/share/autojump/autojump.fish;
 	source /usr/share/autojump/autojump.fish;
 end
 
+# Clear the screen mapping from c-l to c-o as vim-tmux is precendeted.
+bind \co 'clear; commandline -f repaint'
+
 if command -v exa > /dev/null
 	abbr -a l 'exa'
 	abbr -a ls 'exa'

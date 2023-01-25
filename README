@@ -1,6 +1,6 @@
 Software Tools:
 	- Terminal Emulator: Alacritty
-	- Shell: fish + tmux
+	- Shell: fish + tmux (tpm for plugins: Install: <prefix> I)
 	- Editor: Neovim (+ VsCode)
 	- exa (modern replacement for ls.)
 
@@ -14,3 +14,6 @@ Neovim Plugins (with Packer as Plugin Manager):
 	- harpoon
 	- treesitter
 	- vim-fugitive
+
+Additional Software Packages
+    - nvm (-> node)
