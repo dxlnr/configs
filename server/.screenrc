@@ -1,0 +1,11 @@
+# Turn off a bunch of things.
+startup_message off
+vbell off
+
+# Some Status
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%? %= %{g}][%{B} %m/%d %{W}%c %{g}]'
+
+term xterm-256color
+
