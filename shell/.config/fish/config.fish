@@ -74,7 +74,9 @@ end
 # Permanent Path Config
 eval /home/daniel/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 set PATH $HOME/.cargo/bin $PATH
-set PATH $HOME/.nvm/versions/node/v19.4.0/bin $PATH
+set PATH (which node) $PATH
+set PATH (which npm) $PATH
+# set PATH $HOME/.nvm/versions/node/v19.4.0/bin $PATH
 
 # RISCV Toolchain
 set RISCV /opt/riscv $RISCV
