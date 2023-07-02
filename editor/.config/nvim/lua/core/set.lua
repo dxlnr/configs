@@ -1,0 +1,14 @@
+vim.opt.nu = true                           -- 
+vim.opt.cursorline = true                   -- highlight the current line
+vim.opt.relativenumber = true               -- set relative line numbers
+vim.opt.tabstop = 4                         -- insert 4 spaces for a single tab
+vim.opt.softtabstop = 4                     -- combination of tabs and spaces
+vim.opt.shiftwidth = 4                      -- the number of spaces inserted for each indentation
+vim.opt.expandtab = true                    -- convert tabs to spaces
+vim.opt.smartindent = true                  -- make indenting as smart as it can be
+vim.opt.hlsearch = false                    -- disable highlight on all matches on previous search pattern
+vim.opt.termguicolors = true                -- set term gui colors 
+vim.opt.updatetime = 50                     -- faster completion (4000ms default)
+vim.opt.colorcolumn = "80"                  -- set side column to 80 spaces
+vim.opt.swapfile = false                    -- creates a swapfile
+vim.opt.incsearch = true                    -- incremental search
