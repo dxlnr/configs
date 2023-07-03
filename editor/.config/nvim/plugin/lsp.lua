@@ -1,8 +1,7 @@
-local lsp = require('lsp-zero')
+local lsp = require('lsp-zero').preset({})
 
-lsp.preset('recommended')
 lsp.ensure_installed({
-	'rust_analyzer', 'clangd', 'pylsp'
+	'rust_analyzer', 'clangd', 'pylsp', 'tsserver'
 })
 
 local cmp = require('cmp')
@@ -28,47 +27,35 @@ lsp.setup_nvim_cmp({
 	mapping = cmp_mappings
 })
 
-require('lspconfig').pylsp.setup {
-  on_attach = on_attach,
-  flags = {
-    -- This will be the default in neovim 0.7+
-    debounce_text_changes = 150,
-  },
-  settings = {
-    -- configure plugins in pylsp
-    pylsp = {
-      plugins = {
-        pyflakes = {enabled = false},
-        pylint = {enabled = false},
-      },
-    },
-  },
-}
-
-require('lspconfig').lua_ls.setup {
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-}
-
-require('lspconfig').clangd.setup {}
+-- LSP Server Configurations
+--
+require('lspconfig').lua_ls.setup({
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
+require('lspconfig').pylsp.setup({
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    ignore = { 'W391', 'E501', 'E123', 'E456', 'E789' },
+                    maxLineLength = 120
+                },
+                flake8 = {
+                    enabled = true,
+                    ignore = { "E203", "W503", "E501", "C901" }
+                },
+                mccabe = { enabled = false },
+                pylint = { enabled = false }
+            }
+        }
+    }
+})
 
 vim.diagnostic.config({
     virtual_text = true,
@@ -84,6 +71,7 @@ lsp.on_attach(function(client, bufnr)
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 end)
 
 lsp.setup()
