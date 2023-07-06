@@ -46,12 +46,13 @@ return packer.startup(function(use)
     use('github/copilot.vim')
     use('nvim-lua/plenary.nvim')
 	-- Colorschemes
-    use({'rose-pine/neovim', 
-        as = 'rose-pine', config = function()
-            require("rose-pine").setup()
-            vim.cmd('colorscheme rose-pine')
-     end
-    })
+    -- use({'rose-pine/neovim', 
+    --     as = 'rose-pine', config = function()
+    --         require("rose-pine").setup()
+    --         vim.cmd('colorscheme rose-pine')
+    --  end
+    -- })
+    use('kvrohit/mellow.nvim')
 	-- Completions cmp
     use('hrsh7th/nvim-cmp')
     use('hrsh7th/cmp-buffer')
