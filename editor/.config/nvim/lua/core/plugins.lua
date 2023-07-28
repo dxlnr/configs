@@ -52,7 +52,7 @@ return packer.startup(function(use)
     --         vim.cmd('colorscheme rose-pine')
     --  end
     -- })
-    use('kvrohit/mellow.nvim')
+    use("kihachi2000/yash.nvim")
 	-- Completions cmp
     use('hrsh7th/nvim-cmp')
     use('hrsh7th/cmp-buffer')
