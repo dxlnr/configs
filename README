@@ -1,20 +1,8 @@
 Software Tools:
-	- Terminal Emulator: Alacritty
-	- Shell: fish + tmux (tpm for plugins: Install: <prefix> I) ( fish: $ chsh -s $(which fish) )
-	- Editor: Neovim (+ VsCode)
+  - Terminal Emulator: Alacritty
+  - Shell: fish + tmux (tpm for plugins: Install: <prefix> I) ( fish: $ chsh -s $(which fish) )
+  - Editor: Neovim (+ VsCode)
 
-Stuff I want to use
-	- Tilling Window Manager: Xmonad
-	- Polybar
-	- Xsession
-
-Neovim Plugins (with Packer as Plugin Manager):
-	- Packer 
-	- telescope (fuzzy finder)
-	- harpoon
-	- treesitter
-	- vim-fugitive
-
-Additional Software Packages
-    - ripgrep (for telescope grep finder)
-    - nvm (-> node)
+  - ripgrep (for telescope grep finder)
+  - nvm (-> node)
+  - gdb-dashboard: https://github.com/cyrus-and/gdb-dashboard
