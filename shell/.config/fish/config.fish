@@ -1,7 +1,6 @@
-abbr -a n nvim
+abbr -a n 'nvim .'
 abbr -a g 'cd ~/code/github'
 abbr -a ga 'git add --all'
-abbr -a m 'cd ~/code/modalic/code'
 
 if status is-interactive
 and not set -q TMUX
@@ -72,7 +71,7 @@ function fish_greeting
 end
 
 # Permanent Path Config
-eval /home/daniel/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+eval $HOME/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 set PATH $HOME/.cargo/bin $PATH
 set PATH (which node) $PATH
 set PATH (which npm) $PATH
