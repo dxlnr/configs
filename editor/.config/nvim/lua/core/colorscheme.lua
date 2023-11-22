@@ -1,4 +1,4 @@
-local colorscheme = "yash"
+local colorscheme = "rose-pine"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -6,7 +6,7 @@ if not status_ok then
 end
 
 function ColorMyPencils(color)
-	color = color or "yash"
+	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

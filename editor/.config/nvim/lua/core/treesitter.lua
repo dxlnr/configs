@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup({
-    ensure_installed = { "bash", "c", "json", "lua", "python", "typescript", "tsx", "rust", "yaml", "markdown", "markdown_inline" },
+    ensure_installed = { "help", "bash", "c", "json", "lua", "python", "typescript", "tsx", "rust", "yaml", "markdown", "markdown_inline" },
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
     auto_install = true,
 	highlight = {
