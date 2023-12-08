@@ -6,3 +6,7 @@ Software Tools:
   - ripgrep (for telescope grep finder)
   - nvm (-> node)
   - gdb-dashboard: https://github.com/cyrus-and/gdb-dashboard
+
+Useful commands:
+  - ssh -L 8080:localhost:8080 -N -f -l <user> <host> (forward port)
+  - ssh USER@HOST -t tmux new -A -s <session-name> (attach to tmux session on remote host)
