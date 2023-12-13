@@ -10,3 +10,4 @@ Software Tools:
 Useful commands:
   - ssh -L 8080:localhost:8080 -N -f -l <user> <host> (forward port)
   - ssh USER@HOST -t tmux new -A -s <session-name> (attach to tmux session on remote host)
+  - git fetch upstream && git checkout <BRANCH> && git merge upstream/master (update forked repo) && git push origin <BRANCH>
