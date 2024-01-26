@@ -1,7 +1,7 @@
 local servers = {
     'clangd',
     'pylsp',
-    'rust_analyzer',  
+    'rust_analyzer',
     'lua_ls'
 }
 
