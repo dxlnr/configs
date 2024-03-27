@@ -3,7 +3,9 @@ return {
     pylsp = {
       plugins = {
         pylint = {
-          args = { {'--ignore=E501,E231', '-'}, enabled=true, debounce=200 }
+          args = {'--ignore=E0401,E501,E231'},
+          enabled=false,
+          debounce=200
         },
         pycodestyle = {
           enabled=true,

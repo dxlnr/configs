@@ -1,7 +1,7 @@
 local servers = {
     'clangd',
     'pylsp',
-    'rust_analyzer',  
+    'rust_analyzer',
     'lua_ls'
 }
 
@@ -23,7 +23,7 @@ for _, server in pairs(servers) do
 		on_attach = require("core.lsp.handlers").on_attach,
 		capabilities = require("core.lsp.handlers").capabilities,
 	}
-	server = vim.split(server, "@")[1]
+	-- server = vim.split(server, "@")[1]
 
 	local require_ok, conf_opts = pcall(require, "core.lsp.servers." .. server)
 	if require_ok then

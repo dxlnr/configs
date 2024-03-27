@@ -1,29 +1,81 @@
-[colors.bright]
-black = "0x4C566A"
-blue = "0x81A1C1"
-cyan = "0x8FBCBB"
-green = "0xA3BE8C"
-magenta = "0xB48EAD"
-red = "0xBF616A"
-white = "0xECEFF4"
-yellow = "0xEBCB8B"
+[colors.primary]
+foreground = "#e0def4"
+background = "#181818"
+dim_foreground = "#908caa"
+bright_foreground = "#e0def4"
+
+[colors.cursor]
+text = "#e0def4"
+cursor = "#524f67"
+
+[colors.vi_mode_cursor]
+text = "#e0def4"
+cursor = "#524f67"
+
+[colors.search.matches]
+foreground = "#908caa"
+background = "#26233a"
+
+[colors.search.focused_match]
+foreground = "#191724"
+background = "#ebbcba"
+
+[colors.hints.start]
+foreground = "#908caa"
+background = "#1f1d2e"
+
+[colors.hints.end]
+foreground = "#6e6a86"
+background = "#1f1d2e"
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.footer_bar]
+foreground = "#e0def4"
+background = "#1f1d2e"
+
+[colors.selection]
+text = "#e0def4"
+background = "#403d52"
 
 [colors.normal]
-black = "0x3B4252"
-blue = "0x81A1C1"
-cyan = "0x88C0D0"
-green = "0xA3BE8C"
-magenta = "0xB48EAD"
-red = "0xBF616A"
-white = "0xE5E9F0"
-yellow = "0xEBCB8B"
+black = "#26233a"
+red = "#eb6f92"
+green = "#31748f"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ebbcba"
+white = "#e0def4"
 
-[colors.primary]
-background = "#000000"
-foreground = "#c5c8c6"
+[colors.bright]
+black = "#6e6a86"
+red = "#eb6f92"
+green = "#31748f"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ebbcba"
+white = "#e0def4"
+
+[colors.dim]
+black = "#6e6a86"
+red = "#eb6f92"
+green = "#31748f"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ebbcba"
+white = "#e0def4"
 
 [font]
-size = 10.0
+size = 18.0
+
+[font.normal]
+family = "Ubuntu Mono"
+style = "Regular"
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -37,10 +89,10 @@ mods = "Control|Shift"
 
 [scrolling]
 history = 10000
-multiplier = 3
+multiplier = 6
 
 [window]
-opacity = 0.85
+opacity = 0.9
 title = "shell"
 
 [window.dimensions]
@@ -50,3 +102,7 @@ lines = 42
 [window.position]
 x = 250
 y = 250
+
+[window.padding]
+x = 10
+y = 2
