@@ -14,3 +14,7 @@ Useful commands:
 
 Extra:
   - For add external libraries to clang lsp move `shell/.config/clangd` to `$HOME/.config/`
+
+Fonts:
+  - Iosevka (Regular): 
+    - mkdir -p ~/.local/share/fonts && cp Iosevka-Regular.ttc ~/.local/share/fonts/ && fc-cache -f -v

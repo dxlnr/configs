@@ -1,4 +1,5 @@
 local colorscheme = "rose-pine"
+-- local colorscheme = "yash"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -14,4 +15,4 @@ function ColorMyPencils(color)
 
 end
 
-ColorMyPencils()
+ColorMyPencils(colorscheme)
