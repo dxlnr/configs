@@ -12,6 +12,7 @@ return {
           ignore={'E501', 'E231', 'E121', 'E126', 'E203', 'E731', 'W503'},
           maxLineLength=96
         },
+        mccabe = { enabled = false },
       }
     }
   }
