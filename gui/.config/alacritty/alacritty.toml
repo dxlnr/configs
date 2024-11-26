@@ -74,8 +74,7 @@ white = "#e0def4"
 size = 18.0
 
 [font.normal]
-family = "Ubuntu Mono"
-style = "Regular"
+family = "Iosevka"
 
 [[keyboard.bindings]]
 action = "Paste"
