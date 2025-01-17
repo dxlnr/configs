@@ -1,77 +1,81 @@
 [colors.primary]
 foreground = "#e0def4"
 background = "#181818"
-dim_foreground = "#908caa"
-bright_foreground = "#e0def4"
+dim_foreground = "#cbd9d8"
+bright_foreground = "#eaeeee"
 
 [colors.cursor]
-text = "#e0def4"
-cursor = "#524f67"
+text = "#e6eaea"
+cursor = "#cbd9d8"
 
 [colors.vi_mode_cursor]
-text = "#e0def4"
-cursor = "#524f67"
+text = "#e6eaea"
+cursor = "#a1cdd8"
 
 [colors.search.matches]
-foreground = "#908caa"
-background = "#26233a"
+foreground = "#e6eaea"
+background = "#425e5e"
 
 [colors.search.focused_match]
-foreground = "#191724"
-background = "#ebbcba"
-
-[colors.hints.start]
-foreground = "#908caa"
-background = "#1f1d2e"
-
-[colors.hints.end]
-foreground = "#6e6a86"
-background = "#1f1d2e"
-
-[colors.line_indicator]
-foreground = "None"
-background = "None"
+foreground = "#e6eaea"
+background = "#7aa4a1"
 
 [colors.footer_bar]
-foreground = "#e0def4"
-background = "#1f1d2e"
+foreground = "#e6eaea"
+background = "#254147"
+
+[colors.hints.start]
+foreground = "#e6eaea"
+background = "#ff8349"
+
+[colors.hints.end]
+foreground = "#e6eaea"
+background = "#254147"
 
 [colors.selection]
-text = "#e0def4"
-background = "#403d52"
+text = "#e6eaea"
+background = "#293e40"
 
 [colors.normal]
-black = "#26233a"
-red = "#eb6f92"
-green = "#31748f"
-yellow = "#f6c177"
-blue = "#9ccfd8"
-magenta = "#c4a7e7"
-cyan = "#ebbcba"
-white = "#e0def4"
+black = "#2f3239"
+red = "#e85c51"
+green = "#7aa4a1"
+yellow = "#fda47f"
+blue = "#5a93aa"
+magenta = "#ad5c7c"
+cyan = "#a1cdd8"
+white = "#ebebeb"
 
 [colors.bright]
-black = "#6e6a86"
-red = "#eb6f92"
-green = "#31748f"
-yellow = "#f6c177"
-blue = "#9ccfd8"
-magenta = "#c4a7e7"
-cyan = "#ebbcba"
-white = "#e0def4"
+black = "#4e5157"
+red = "#eb746b"
+green = "#8eb2af"
+yellow = "#fdb292"
+blue = "#73a3b7"
+magenta = "#b97490"
+cyan = "#afd4de"
+white = "#eeeeee"
 
 [colors.dim]
-black = "#6e6a86"
-red = "#eb6f92"
-green = "#31748f"
-yellow = "#f6c177"
-blue = "#9ccfd8"
-magenta = "#c4a7e7"
-cyan = "#ebbcba"
-white = "#e0def4"
+black = "#282a30"
+red = "#c54e45"
+green = "#688b89"
+yellow = "#d78b6c"
+blue = "#4d7d90"
+magenta = "#934e69"
+cyan = "#89aeb8"
+white = "#c8c8c8"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#ff8349"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#cb7985"
 
 [font]
-size = 18.0
+size = 14.0
 
 [font.normal]
 family = "Iosevka"
@@ -95,12 +99,12 @@ opacity = 0.9
 title = "shell"
 
 [window.dimensions]
-columns = 160
-lines = 42
+columns = 120
+lines = 36
 
 [window.position]
-x = 250
-y = 250
+x = 0
+y = 0
 
 [window.padding]
 x = 10
