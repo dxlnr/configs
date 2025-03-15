@@ -46,26 +46,27 @@ return packer.startup(function(use)
     use('github/copilot.vim')
     use('nvim-lua/plenary.nvim')
 	-- Colorschemes
-    use({'rose-pine/neovim',
-        as = 'rose-pine', config = function()
-            require("rose-pine").setup()
-            vim.cmd('colorscheme rose-pine')
-     end
-    })
+    -- use({'rose-pine/neovim',
+    --     as = 'rose-pine', config = function()
+    --         require("rose-pine").setup()
+    --         vim.cmd('colorscheme rose-pine')
+    --  end
+    -- })
     -- use("kihachi2000/yash.nvim")
+    use("vague2k/vague.nvim")
 	-- Completions cmp
     use('hrsh7th/nvim-cmp')
     use('hrsh7th/cmp-buffer')
     use('hrsh7th/cmp-path')
-	use('saadparwaiz1/cmp_luasnip') 
+	use('saadparwaiz1/cmp_luasnip')
 	use('hrsh7th/cmp-nvim-lsp')
 	use('hrsh7th/cmp-nvim-lua')
 	-- Snippets
-    use('L3MON4D3/LuaSnip')   
+    use('L3MON4D3/LuaSnip')
     use('rafamadriz/friendly-snippets')
     -- LSP
-	use('neovim/nvim-lspconfig') 
-    use('williamboman/mason.nvim') 
+	use('neovim/nvim-lspconfig')
+    use('williamboman/mason.nvim')
     use('williamboman/mason-lspconfig.nvim')
 	use('jose-elias-alvarez/null-ls.nvim')
 	-- Telescope
@@ -75,6 +76,11 @@ return packer.startup(function(use)
     use('nvim-treesitter/playground')
 	-- Git
     use('tpope/vim-fugitive')
+    -- Assembly
+    use('krady21/compiler-explorer.nvim')
+    use('p00f/godbolt.nvim')
+    -- Tmux
+    -- use('christoomey/vim-tmux-navigator')
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

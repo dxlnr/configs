@@ -9,7 +9,7 @@ return {
         },
         pycodestyle = {
           enabled=true,
-          ignore={'E501', 'E231', 'E121', 'E126', 'E203', 'E302', 'E731', 'W503'},
+          ignore={'E501', 'E231', 'E121', 'E126', 'E203', 'E302', 'E702', 'E731', 'W503'},
           maxLineLength=96
         },
         mccabe = { enabled = false },

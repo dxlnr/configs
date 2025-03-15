@@ -1,5 +1,6 @@
-local colorscheme = "rose-pine"
+-- local colorscheme = "rose-pine"
 -- local colorscheme = "yash"
+local colorscheme = "vague"
 
 function ColorMyPencils(color)
 	color = color or "rose-pine"
