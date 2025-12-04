@@ -1,6 +1,9 @@
 abbr -a n 'nvim .'
 abbr -a g 'cd ~/code/github'
+# GIT
 abbr -a ga 'git add --all'
+abbr -a gs 'git status'
+abbr -a gd 'git diff HEAD'
 
 if status is-interactive
 and not set -q TMUX
