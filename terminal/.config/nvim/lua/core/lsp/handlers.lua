@@ -15,44 +15,45 @@ M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
-	local signs = {
-		{ name = "DiagnosticSignError", text = "E" },
-		{ name = "DiagnosticSignWarn", text = "W" },
-		{ name = "DiagnosticSignHint", text = "H" },
-		{ name = "DiagnosticSignInfo", text = "I" },
-	}
+  -- Configure diagnostics (no sign_define needed)
+  vim.diagnostic.config({
+    virtual_text = false,
+    signs = {
+      -- Map severity -> sign text
+      text = {
+        [vim.diagnostic.severity.ERROR] = "E",
+        [vim.diagnostic.severity.WARN]  = "W",
+        [vim.diagnostic.severity.HINT]  = "H",
+        [vim.diagnostic.severity.INFO]  = "I",
+      },
+    },
+    update_in_insert = true,
+    underline = true,
+    severity_sort = true,
+    float = {
+      focusable = true,
+      style = "minimal",
+      -- border = "rounded",
+      source = "always",
+      header = "",
+      prefix = "",
+    },
+  })
 
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-	end
+  -- LSP hover/signature windows (keep your borders if you like)
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+    vim.lsp.handlers.hover,
+    {
+      -- border = "rounded",
+    }
+  )
 
-	local config = {
-		virtual_text = false,
-		signs = {
-			active = signs,
-		},
-		update_in_insert = true,
-		underline = true,
-		severity_sort = true,
-		float = {
-			focusable = true,
-			style = "minimal",
-			-- border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
-	}
-
-	vim.diagnostic.config(config)
-
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		-- border = "rounded",
-	})
-
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		-- border = "rounded",
-	})
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+    vim.lsp.handlers.signature_help,
+    {
+      -- border = "rounded",
+    }
+  )
 end
 
 local function lsp_keymaps(bufnr)

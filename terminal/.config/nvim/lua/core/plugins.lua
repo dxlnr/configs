@@ -43,7 +43,6 @@ return packer.startup(function(use)
     use('wbthomason/packer.nvim')
     use('mbbill/undotree')
     use('tpope/vim-commentary')
-    use('github/copilot.vim')
     use('nvim-lua/plenary.nvim')
 	-- Colorschemes
     -- use({'rose-pine/neovim',
@@ -77,11 +76,38 @@ return packer.startup(function(use)
 	-- Git
     use('tpope/vim-fugitive')
     -- Assembly
-    use('krady21/compiler-explorer.nvim')
-    use('p00f/godbolt.nvim')
+    -- use('krady21/compiler-explorer.nvim')
+    -- use('p00f/godbolt.nvim')
     -- Tmux
     -- use('christoomey/vim-tmux-navigator')
-
+    -- AI
+    use('github/copilot.vim')
+    use({"folke/snacks.nvim",
+      config = function()
+        if vim.g.__snacks_setup_done then return end
+        vim.g.__snacks_setup_done = true
+        require("snacks").setup({ input = {}, picker = {}, terminal = {} })
+      end,
+    })
+    use({"NickvanDyke/opencode.nvim",
+      requires = { "folke/snacks.nvim" },
+      config = function()
+        vim.g.opencode_opts = {}
+        vim.o.autoread = true
+        -- ask
+        vim.keymap.set({ "n", "x" }, "<leader>oq", function()
+          require("opencode").ask("@this: ", { submit = true })
+        end, { desc = "Ask opencode" })
+        -- execute
+        vim.keymap.set({ "n", "x" }, "<leader>ox", function()
+          require("opencode").select()
+        end, { desc = "Execute opencode action" })
+        -- open
+        vim.keymap.set("n", "<leader>oo", function()
+          require("opencode").command("session.half.page.down")
+        end, { desc = "opencode half page down" })
+      end,
+    })
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
