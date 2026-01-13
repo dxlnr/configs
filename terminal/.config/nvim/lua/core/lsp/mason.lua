@@ -1,34 +1,30 @@
 local servers = {
-    'clangd',
-    'pylsp',
-    'rust_analyzer',
-    'lua_ls'
+    "clangd",
+    "pylsp",
+    "rust_analyzer",
+    "lua_ls",
 }
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = servers,
-	automatic_installation = true,
+    ensure_installed = servers,
+    automatic_installation = true,
 })
+local handlers = require("core.lsp.handlers")
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-	return
+-- Configure each server using native vim.lsp.config()
+for _, server in ipairs(servers) do
+    local config = {
+        on_attach = handlers.on_attach,
+        capabilities = handlers.capabilities,
+    }
+    -- Load server-specific settings if they exist
+    local require_ok, server_opts = pcall(require, "core.lsp.servers." .. server)
+    if require_ok then
+        config = vim.tbl_deep_extend("force", config, server_opts)
+    end
+
+    vim.lsp.config(server, config)
 end
-
-local opts = {}
-
-for _, server in pairs(servers) do
-	opts = {
-		on_attach = require("core.lsp.handlers").on_attach,
-		capabilities = require("core.lsp.handlers").capabilities,
-	}
-	-- server = vim.split(server, "@")[1]
-
-	local require_ok, conf_opts = pcall(require, "core.lsp.servers." .. server)
-	if require_ok then
-		opts = vim.tbl_deep_extend("force", conf_opts, opts)
-	end
-
-	lspconfig[server].setup(opts)
-end
+-- Enable all configured servers
+vim.lsp.enable(servers)

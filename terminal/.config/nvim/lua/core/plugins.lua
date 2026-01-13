@@ -104,7 +104,7 @@ return packer.startup(function(use)
         end, { desc = "Execute opencode action" })
         -- open
         vim.keymap.set("n", "<leader>oo", function()
-          require("opencode").command("session.half.page.down")
+          require("opencode").command("session.half.page.up")
         end, { desc = "opencode half page down" })
       end,
     })
